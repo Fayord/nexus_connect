@@ -1,0 +1,73 @@
+30 3 w0 w w . e wlewcwtr.oelleucxt.rcoolu.txh.c om ENGLISH 31
+Malfunction Possible cause Solution Malfunction Possible cause Solution
+The drain hose is squashed or Check the drain hose The laundry is not evenly Pause the machine and
+kinked. (Error code: ) connection. distributed in the drum. redistribute laundry
+manually.
+Machine The drain pump is clogged. Clean the drain filter. Machine
+does not (Error code: ) vibrates or There is very little laundry in the Load more laundry.
+is noisy: drum.
+empty and/or
+The option “Rinse Hold” Press Start/Pause
+does not Unstable floors eg. wooden floors. Refer to relevant paragraph
+has been selected. touchpad to drain the water
+spin: in “Positioning” section.
+or select spin program.
+The laundry is not evenly Pause the machine and Detergent over dose. Reduce the detergent
+distributed in the drum. redistribute laundry quantity or use another one.
+manually. (Refer page 22 “Detergents
+Cycle time Type And Quantity Of
+Too much detergent or unsuitable Reduce detergent quantity longer than Detergent”).
+detergent (creates too much and use correct type of displayed:
+foam) has been used. detergent (refer page 22). Machine unbalance. Redistribute laundry
+manually in the drum and
+Check whether there are any leaks Check the water inlet hose start the spin phase again.
+There is water
+from one of the inlet hose fittings. It connection.
+on the floor: is not always easy to see this as The cycle is
+the water runs down the hose; shorter than The appliance calculated a new time according to the laundry
+check to see if it is damp. the time load.
+displayed.
+The drain hose is damaged. Call Service.
+The electronic unbalance detection Pause the machine and
+Too little detergent or unsuitable Increase detergent device has cut in because the redistribute laundry
+detergent has been used. quantity or use different laundry is not evenly distributed in manually.
+detergent (refer page 22). the drum. The laundry is
+Unsatisfac- redistributed by reverse rotation of
+tory Stubborn stains have not been Use commercial products Spinning the drum.
+washing treated prior to washing. to treat the stubborn stains. starts late
+This may happen several times
+or machine
+results:
+The correct temperature was not Check if you have selected before the unbalance disappears
+does
+selected. the correct temperature. and normal spinning can resume. If,
+not spin:
+after 10 minutes, the laundry is still
+Excessive laundry load. Reduce load.
+not evenly distributed in the drum,
+the machine will not spin. In this
+The program is still running. Wait until the end of cycle.
+case, redistribute the load manually
+There is water in the drum. You must drain the water and select the spin program.
+to open the door (refer
+Machine not installed properly. Make sure the levelling of
+“Opening The Door” on
+The door will the appliance is correct.
+page 19.
+not open: Refer to “Installation”.
+This problem may be caused by Contact Service. If you
+Machine
+a failure of the appliance. need to open the door, Transit bolts or packaging not Make sure that the
+makes an
+please read carefully removed. packaging and/or the
+unusual
+“Emergency door opening” transit bolts are removed.
+noise:
+on page 32. Refer to “Unpacking”.
+The transit bolts and packing Check the correct installa- The load may be too small. Add more laundry in the
+Machine have not been removed. tion of the appliance. drum.
+vibrates or
+is noisy: The support feet have not been Check the correct levelling No water is Machines based on modern technology operate very economical-
+adjusted. of the appliance. visible in
+ly using very little water without affecting performance.
+the drum:

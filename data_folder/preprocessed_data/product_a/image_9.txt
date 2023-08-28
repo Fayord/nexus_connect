@@ -1,0 +1,60 @@
+10 www.electrolux.com ENGLISH 11
+3. CONTROL PANEL
+3.1 Control Panel Description 3.2 Program Chart
+H I J K L
+Program; Max. Max. Load Type of load and soil level
+Temperature Spin (Dry
+range Speed Clothes)
+Cottons; 1200 Max. 1) White and coloured cotton. (Adjust wash time
+Cold to 90°C rpm according to soil level. See Time Manager table on
+page 13)
+Mixed; 1200 4 kg Synthetic or mixed fabric items. (Adjust wash time
+Cold to 60°C rpm according to soil level. See Time Manager table on
+2s 2s
+page 13)
+M N
+Delicates; 1200 4 kg Delicate fabrics such as acrylics, viscose, polyester
+rpm items. (Adjust wash time according to soil level.
+A B C D E F G Cold to 40°C
+See Time Manager table on page 13)
+A Program knob H Display Bedding; 800 3 kg Special program for one synthetic blanket, duvet,
+Cold to 60°C rpm bedspread and so on. (Adjust wash time according
+B Temp touchpad I Delay End touchpad to soil level. See Time Manager table on page 13)
+C On/Off button J Time Manager touchpad
+Sports; 1200 4 kg A gentle program designed for mixed fabrics found
+D Spin touchpad K Pause to add Clothes option Cold to 40°C rpm in delicate clothes.
+E Hygienic Care touchpad L Start/Pause touchpad Energy 1200 Max. 1) White and colourfast cotton. Set this program to
+Saver; rpm have a good washing results and decrease the
+F Prewash touchpad M Favourite program save option
+40°C and energy consumption. The time of the washing
+G Extra Rinse touchpad N Child safety lock option 60°C 2) program is extended.
+Tub Clean; – – For cleaning the tub.
+60°C
+1)
+Spin 1200 Max. To spin the laundry and drain the water in
+Display
+rpm the drum.
+CCA AAB A Delay End Icon Rinse + Spin 1200 Max. 1) To rinse and spin the laundry.
+rpm
+B Door Lock Icon
+C Baby Care; 1200 4 kg Baby cotton clothes and delicate knitting items with
+C Program Duration / Delay End Time
+D Cold to 40°C rpm normal soil.
+/ Alarm Code
+E
+D Time Manager level Wool ; 1200 1.5 kg Specially tested program for woollen garments
+Cold to 40°C rpm bearing the “Pure new woollen, non-shrink,
+E Program Phase Indication Icon: machine washable” label.
+I H G F Wash Phase, Rinse Phase,
+Quick 15; 1200 1.5 kg Lightly soiled synthetics or mixed fabrics.
+Spin Phase
+Cold to 30°C rpm
+F Add Clothes Icon
+Daily 39; 1200 EWF8024P5WB Daily wear coloured cotton clothes such as
+G Anticrease Phase Icon (this program 30°C to 40°C rpm EWF8024P5SB shirts, blouses, towels and undergarments.
+4 kg
+phase is only active in the Washer Ideal for low level of soil.
+Dryer model) EWF9024P5WB
+5.5 kg
+H Vapour phase Icon
+I Ultramix phase Icon

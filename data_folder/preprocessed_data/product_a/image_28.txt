@@ -1,0 +1,54 @@
+EENNGGLLISISHH 2299
+9. TROUBLESHOOTING
+9.1 Possible Failures Alarm Code:
+Certain problems are due to lack of
+The appliance does not fill
+simple maintenance or oversights, which
+with water properly.
+can be solved easily without calling out
+The appliance does not drain
+an engineer. Before contacting your local
+the water.
+Service Centre, please check trouble-
+shooting below. The appliance door is open or
+not closed correctly. Please
+Once the problem has been eliminated,
+check the door!
+press the Start/Pause button to restart
+the program. If after all checks, the The main supply is unstable.
+problem persists, contact your local Wait until the main supply is
+Service Centre. stable.
+No communication between
+WARNING! Deactivate the
+electronic elements of the
+appliance before you do the
+appliance. Switch off and
+checks.
+switch on again.
+Malfunction Possible cause Solution
+The door has not been closed. Close the door firmly.
+(Error code: )
+The plug is not properly Insert the plug into the power
+inserted into the power socket. socket.
+There is no power at the Please check your domestic
+socket. electrical installation.
+Machine does The Start/Pause touchpad has Press the Start/Pause
+not start: not been pressed. touchpad.
+The “Delay End” has been If the laundry are to be
+selected. washed immediately, cancel
+the “Delay End”.
+The Main supply is unstable. Wait until the main supply is
+(If appears on the stable. Appliance will start
+display.) automatically.
+The water tap is closed. Open the water tap.
+(Error code: )
+The inlet hose is squashed or Check the inlet hose
+Machine does kinked. (Error code: ) connection.
+not fill the
+water: The filter in the inlet hose is Clean the water inlet hose
+blocked. (Error code: ) filter.
+The door is not properly closed. Close the door firmly.
+(Error code: )
+Machine fills The end of the drain hose is Refer to relevant paragraph in
+then empties too low. (Error code: ) “water drainage” section.
+immediately:

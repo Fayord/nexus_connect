@@ -1,0 +1,59 @@
+EENNGGLLISISHH 3311
+Malfunction Possible cause Solution
+The laundry is not evenly Pause the machine and
+distributed in the drum. redistribute laundry
+manually.
+Machine
+vibrates or There is very little laundry in the Load more laundry.
+is noisy: drum.
+Unstable floors eg. wooden floors. Refer to relevant paragraph
+in “Positioning” section.
+Detergent over dose. Reduce the detergent
+quantity or use another one.
+(Refer page 22 “Detergents
+Cycle time Type And Quantity Of
+longer than Detergent”).
+displayed:
+Machine unbalance. Redistribute laundry
+manually in the drum and
+start the spin phase again.
+The cycle is
+shorter than The appliance calculated a new time according to the laundry
+the time load.
+displayed.
+The electronic unbalance detection Pause the machine and
+device has cut in because the redistribute laundry
+laundry is not evenly distributed in manually.
+the drum. The laundry is
+redistributed by reverse rotation of
+Spinning the drum.
+starts late
+This may happen several times
+or machine
+before the unbalance disappears
+does
+and normal spinning can resume. If,
+not spin:
+after 10 minutes, the laundry is still
+not evenly distributed in the drum,
+the machine will not spin. In this
+case, redistribute the load manually
+and select the spin program.
+Machine not installed properly. Make sure the levelling of
+the appliance is correct.
+Refer to “Installation”.
+Machine
+Transit bolts or packaging not Make sure that the
+makes an
+removed. packaging and/or the
+unusual
+transit bolts are removed.
+noise:
+Refer to “Unpacking”.
+The load may be too small. Add more laundry in the
+drum.
+No water is
+Machines based on modern technology operate very economical-
+visible in
+ly using very little water without affecting performance.
+the drum:

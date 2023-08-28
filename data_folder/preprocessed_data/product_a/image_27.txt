@@ -1,0 +1,57 @@
+28 2 8w w w . ewlwecwt.reolelucxtr.oclou.xt.hc om ENGLISH 29
+9. TROUBLESHOOTING
+8.9 Frost Precautions 9.1 Possible Failures Alarm Code:
+If the appliance is installed in an area Certain problems are due to lack of
+The appliance does not fill
+where the temperature can be less simple maintenance or oversights, which
+with water properly.
+than 0 °C, remove the remaining water can be solved easily without calling out
+from the inlet hose and the an engineer. Before contacting your local The appliance does not drain
+drain pump. Service Centre, please check trouble- the water.
+shooting below. The appliance door is open or
+Emergency Drain Once the problem has been eliminated, not closed correctly. Please
+check the door!
+press the Start/Pause button to restart
+1. Disconnect the main plug from the
+the program. If after all checks, the The main supply is unstable.
+main socket. Turn off the water tap.
+problem persists, contact your local Wait until the main supply is
+2. Remove the water inlet hose. Service Centre. stable.
+3. Remove the drain hose from the rear No communication between
+WARNING! Deactivate the
+support and unhook it from sink or electronic elements of the
+appliance before you do the
+spigot. appliance. Switch off and
+checks.
+switch on again.
+Malfunction Possible cause Solution
+The door has not been closed. Close the door firmly.
+(Error code: )
+The plug is not properly Insert the plug into the power
+inserted into the power socket. socket.
+There is no power at the Please check your domestic
+socket. electrical installation.
+Machine does The Start/Pause touchpad has Press the Start/Pause
+not start: not been pressed. touchpad.
+4. Put the end of the drain and inlet hose The “Delay End” has been If the laundry are to be
+in a container. Let the water flow out selected. washed immediately, cancel
+of the hoses. the “Delay End”.
+The Main supply is unstable. Wait until the main supply is
+(If appears on the stable. Appliance will start
+display.) automatically.
+The water tap is closed. Open the water tap.
+(Error code: )
+The inlet hose is squashed or Check the inlet hose
+Machine does kinked. (Error code: ) connection.
+not fill the
+water: The filter in the inlet hose is Clean the water inlet hose
+blocked. (Error code: ) filter.
+5. When no more water flows, install the
+The door is not properly closed. Close the door firmly.
+inlet hose and the drain hose again.
+(Error code: )
+NOTE
+Machine fills The end of the drain hose is Refer to relevant paragraph in
+Make sure that the temperature is then empties too low. (Error code: ) “water drainage” section.
+more than 0 °C before you use the immediately:
+appliance again.
