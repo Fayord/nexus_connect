@@ -67,7 +67,7 @@ def load_db(
 
 def get_chromadb_setting():
     setting = chromadb.config.Settings()
-    setting["persist_directory"] = f"../../vector_db/chroma"
+    setting.persist_directory = f"../../vector_db/chroma"
     return setting
 
 
