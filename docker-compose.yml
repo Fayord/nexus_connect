@@ -9,10 +9,6 @@ services:
         extends:
             file: ./external/chroma/docker-compose.yml
             service: server
-        volumes:
-            - ./:/vector_db/chroma
-            - index_data:/vector_db/index_data
-
     chatbot-api:
         build:
             context: .
