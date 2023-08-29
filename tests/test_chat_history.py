@@ -22,11 +22,11 @@ headers = {
 # response = requests.get(base_url)
 # print(response.json())
 # # Make the POST request
-# response = requests.post(
-#     f"{base_url}/chat",
-#     json=data,
-#     headers=headers,
-# )
+response = requests.post(
+    f"{base_url}/chat",
+    json=data,
+    headers=headers,
+)
 
 message = "ผมชื่อว่าอะไร?"
 

@@ -5,7 +5,7 @@ base_url = "http://localhost:9300"
 
 # Replace these with the actual product ID and client ID you want to use
 product_id = "product_a"
-product_id = "product_a_small"
+# product_id = "product_a_small"
 client_id = "customer_1"
 chat_session_id = "session_1"
 # The message you want to send

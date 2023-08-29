@@ -1,0 +1,28 @@
+version: "3.9"
+
+networks:
+    net:
+        driver: bridge
+
+services:
+    chroma_server:
+        extends:
+            file: ./external/chroma/docker-compose.yml
+            service: server
+        volumes:
+            - ./:/vector_db/chroma
+            - index_data:/vector_db/index_data
+
+    chatbot-api:
+        build:
+            context: .
+        ports:
+            - "9300:9300"
+        networks:
+            - net
+
+volumes:
+    index_data:
+        driver: local
+    backups:
+        driver: local

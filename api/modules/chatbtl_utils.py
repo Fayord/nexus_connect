@@ -65,24 +65,61 @@ def load_db(
     return db
 
 
+def get_chromadb_setting():
+    setting = chromadb.config.Settings()
+    setting["persist_directory"] = f"../../vector_db/chroma"
+    return setting
+
+
 def load_db_api(
     collection_name,
     embeddings=OpenAIEmbeddings(),
 ) -> VectorStore:
     db = None
+    # try:
+    #     url = f"http://localhost:8000/api/v1/collections/{collection_name}"
+    #     response = requests.get(url)
+    #     assert response.status_code == 200
+    #     db = Chroma(
+    #         collection_name=collection_name,
+    #         client=chromadb.HttpClient(),
+    #         embedding_function=embeddings,
+    #     )
+
+    #     print("\tLoad chroma index success")
+    # except Exception:
+    #     raise LoadDBException("Load chroma index failed")
+    # url = f"http://localhost:8000/api/v1/collections/{collection_name}"
+    print("\n\there,")
     try:
         url = f"http://localhost:8000/api/v1/collections/{collection_name}"
         response = requests.get(url)
-        assert response.status_code == 200
-        db = Chroma(
-            collection_name=collection_name,
-            client=chromadb.HttpClient(),
-            embedding_function=embeddings,
-        )
+        print("\n\there,", response.status_code, url)
+    except:
+        pass
+    try:
+        url = f"http://chroma_server:8000/api/v1/collections/{collection_name}"
+        response = requests.get(url)
+        print("\n\there,", response.status_code, url)
+    except:
+        pass
+    try:
+        url = f"http://server:8000/api/v1/collections/{collection_name}"
+        response = requests.get(url)
+        print("\n\there,", response.status_code, url)
+    except:
+        pass
+    assert response.status_code == 200
 
-        print("\tLoad chroma index success")
-    except Exception:
-        raise LoadDBException("Load chroma index failed")
+    db = Chroma(
+        collection_name=collection_name,
+        client=chromadb.HttpClient(
+            host="chroma_server", settings=get_chromadb_setting()
+        ),
+        embedding_function=embeddings,
+    )
+
+    print("\tLoad chroma index success")
     return db
 
 

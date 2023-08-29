@@ -13,9 +13,10 @@ from modules.chatbtl_utils import (
     create_qa,
     qa_complete,
     create_logger,
-    load_db,
     get_memory,
     load_chat_memory,
+    load_db,
+    load_db_api,
 )
 import os
 import time
@@ -28,8 +29,8 @@ app.add_middleware(QueryParamsMiddleware)
 
 test = None
 dir_path = os.path.dirname(os.path.realpath(__file__))
-db_folder = f"{dir_path}/../db_folder"
-assert os.path.exists(db_folder), f"db_folder {db_folder} does not exist"
+# db_folder = f"{dir_path}/../db_folder"
+# assert os.path.exists(db_folder), f"db_folder {db_folder} does not exist"
 
 
 # Define a function to run at startup
@@ -66,11 +67,12 @@ async def chat_with_bot(
     status = "success"
 
     start_time = time.time()
-    db_path = os.path.join(db_folder, product_id)
-    print(db_path)
-    print(os.path.exists(db_path))
+    # db_path = os.path.join(db_folder, product_id)
+    # print(db_path)
+    # print(os.path.exists(db_path))
     try:
-        db_loaded = load_db(db_path)
+        # db_loaded = load_db(db_path)
+        db_loaded = load_db_api(product_id)
         memory = get_memory(
             client_id=client_id,
             product_id=product_id,
