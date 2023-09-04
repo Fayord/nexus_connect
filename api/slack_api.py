@@ -117,7 +117,7 @@ def message(payload):
         print("\n\nbot message\n\n")
         return
     data = {"message": text}
-    product_id = "product_a_small"
+    product_id = "product_a"
     client_id = "slack"
     chat_session_id = "session_1"
     headers = {

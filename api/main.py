@@ -65,7 +65,7 @@ async def chat_with_bot(
     request_id = request.state.request_id
     chat_session_id = request.state.chat_session_id
     status = "success"
-
+    response_text = "please contact admin"
     start_time = time.time()
     # db_path = os.path.join(db_folder, product_id)
     # print(db_path)

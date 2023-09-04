@@ -35,7 +35,7 @@ load_dotenv(credential_path)
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 gpt_model = "gpt-3.5-turbo"
-max_tokens = 1000
+max_tokens = 500
 
 
 def filter_source_document_metadatas(source_documents: List[Document]) -> List[dict]:
@@ -265,7 +265,7 @@ class NoOpLLMChain(LLMChain):
 def create_qa(
     db: VectorStore,
     memory: BaseChatMemory,
-    db_params: dict = {"search_type": "mmr"},
+    db_params: dict = {"search_type": "mmr", "search_kwargs": {"k": 3}},
 ) -> ConversationalRetrievalChain:
     qa = ConversationalRetrievalChain.from_llm(
         llm=ChatOpenAI(temperature=0.0, max_tokens=max_tokens, model_name=gpt_model),
