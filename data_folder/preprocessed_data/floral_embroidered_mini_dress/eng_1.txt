@@ -1,0 +1,22 @@
+color: black
+color: beige
+size: XS
+size: S
+size: M
+size: L
+size: XL
+price: ฿2,295.00
+product_name: 
+Floral Embroidered Mini Dress 
+div_value: Add some beautiful botanicals to your closet with this mini dress. It features floral embroidery, a V-neckline, a sleeveless design, slash pockets, and a back zip fastening. Match it with heels to finish the look. Perfect for wearing to a date or a caf?. Available in black or beige.
+size_chart_in_inch: size xs chest 30-32 inch waist 23-25 inch hip 33.5-35.5 inch
+size_chart_in_inch: size s chest 32-34 inch waist 25-27 inch hip 35.5-37.5 inch
+size_chart_in_inch: size m chest 34-36 inch waist 27-29 inch hip 37.5-39.5 inch
+size_chart_in_inch: size l chest 36-38 inch waist 29-31 inch hip 39.5-41.5 inch
+size_chart_in_inch: size xl chest 38-41 inch waist 31-33 inch hip 42.5-44.5 inch
+size_chart_in_cm: size xs chest 77-81 cm waist 59-63 cm hip 86-90 cm
+size_chart_in_cm: size s chest 82-86 cm waist 64-68 cm hip 91-95 cm
+size_chart_in_cm: size m chest 87-91 cm waist 69-73 cm hip 96-100 cm
+size_chart_in_cm: size l chest 92-96 cm waist 74-78 cm hip 101-105 cm
+size_chart_in_cm: size xl chest 97-99 cm waist 79-81 cm hip 106-108 cm
+size_chart_for_recommend: the measurement in the guide is based on measurement taken directly on the body, not the garment. if your measurement is between two sizes, we recommend you select the larger size.

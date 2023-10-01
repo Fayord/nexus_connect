@@ -17,6 +17,9 @@ ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 ADD .credential /opt/.credential
 COPY ./api /opt/api
+
+# COPY /Users/user/miniconda3/envs/chatgpt/lib/python3.10/site-packages/langchain/output_parsers/json.py /usr/local/lib/python3.10/site-packages/langchain/output_parsers/json.py
+
 # COPY ./db_folder/ /opt/db_folder/
 # COPY ./params.yaml /opt/params.yaml
 

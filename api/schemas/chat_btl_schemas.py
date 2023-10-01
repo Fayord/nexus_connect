@@ -26,7 +26,8 @@ class SuccessResponse(BaseModel):
 
 
 class SourceData(BaseModel):
-    data_name: str = Field(..., description="data origin", example="manual.pdf")
+    brand: str = Field(..., description="brand", example="samsung")
+    product: str = Field(..., description="product", example="washing machine")
     page_index: int = Field(..., description="index of data", example=0)
 
     # for next phrase
@@ -47,7 +48,8 @@ class ChatResponseBody(BaseModel):
     message: str = Field(
         ..., description="message from chat BTL", example="its price is 1000 baht"
     )
-    source_data: Optional[List[SourceData]] = Field(
+    # source_data: Optional[List[SourceData]] = Field(
+    source_data: Optional[List[dict]] = Field(
         ..., description="source data of this response"
     )
 
@@ -65,7 +67,7 @@ class ChatHistoryResponseModel(SuccessResponse):
 
 
 class DisplaySourceData(BaseModel):
-    data_name: str = Field(..., description="data origin", example="manual.pdf")
+    page_index: int = Field(..., description="index of data", example=0)
 
 
 class DisplaySectionData(BaseModel):

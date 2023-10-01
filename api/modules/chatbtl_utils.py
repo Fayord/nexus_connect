@@ -21,6 +21,25 @@ from langchain.prompts.chat import SystemMessagePromptTemplate
 from langchain.schema.document import Document
 from langchain.vectorstores.base import VectorStore
 from langchain.memory.chat_memory import BaseChatMemory
+from langchain.agents.agent import AgentExecutor
+from langchain.agents import initialize_agent
+from langchain.tools import Tool
+
+from langchain.chains.conversation.memory import (
+    ConversationBufferWindowMemory,
+)
+from langchain.chains import RetrievalQA
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import SystemMessage
+from langchain.agents.types import AgentType
+from langchain.tools import Tool
+from langchain.prompts import MessagesPlaceholder
+from langchain.memory import (
+    ConversationBufferMemory,
+    ReadOnlySharedMemory,
+    ConversationTokenBufferMemory,
+)
+import traceback
 
 # from pythainlp import thai_characters
 # thai_characters from pythainlp
@@ -35,7 +54,8 @@ load_dotenv(credential_path)
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 gpt_model = "gpt-3.5-turbo"
-max_tokens = 500
+max_tokens = 750
+# max_tokens = 1000
 
 
 def filter_source_document_metadatas(source_documents: List[Document]) -> List[dict]:
@@ -249,6 +269,24 @@ def get_memory(
     return memory
 
 
+def get_memory_agents(
+    client_id: str,
+    product_id: str,
+    chat_session_id: str,
+) -> BaseChatMemory:
+    loaded_chat_memory = load_chat_memory(client_id, product_id, chat_session_id)
+
+    memory = ConversationTokenBufferMemory(
+        llm=ChatOpenAI(temperature=0.0, max_tokens=max_tokens, model_name=gpt_model),
+        # memory = ConversationBufferWindowMemory(
+        memory_key="chat_history",
+        return_messages=True,
+        chat_memory=loaded_chat_memory,
+        max_token_limit=max_tokens,
+    )
+    return memory
+
+
 class NoOpLLMChain(LLMChain):
     """No-op LLM chain."""
 
@@ -262,18 +300,93 @@ class NoOpLLMChain(LLMChain):
         return question
 
 
+def create_agent_executor(
+    db: VectorStore,
+    memory: BaseChatMemory,
+    db_params: dict = {"search_type": "similarity", "search_kwargs": {"k": 3}},
+) -> AgentExecutor:
+    system_message = """You are a Product information chatbot name naxon
+    Talk politely professional.
+    You can ask questions to help you understand user intent.
+    You should only talk within the context of problem.
+    If you are unsure of how to help, you can suggest the client to contact the customer support.
+    You should talk in Thai, unless the client talks in English. 
+        """
+    readonlymemory = ReadOnlySharedMemory(memory=memory)
+
+    chat_history_qa = create_qa(
+        db,
+        readonlymemory,
+        db_params,
+        return_generated_question=False,
+        return_source_documents=False,
+    )
+    tools = [
+        Tool(
+            name="qa-product-information",
+            # func=qa.run,
+            func=chat_history_qa.run,
+            description="Useful when you need to information about the product. You should pass full user question to this tool.",
+        )
+    ]
+    executor = initialize_agent(
+        agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION,
+        tools=tools,
+        llm=ChatOpenAI(temperature=0.0, max_tokens=max_tokens, model_name=gpt_model),
+        memory=memory,
+        agent_kwargs={"system_message": system_message},
+        verbose=True,
+        max_iterations=3,
+        early_stopping_method="generate",
+    )
+    return executor
+
+
 def create_qa(
     db: VectorStore,
     memory: BaseChatMemory,
-    db_params: dict = {"search_type": "mmr", "search_kwargs": {"k": 3}},
+    db_params: dict = {"search_type": "similarity", "search_kwargs": {"k": 3}},
+    return_generated_question: bool = True,
+    return_source_documents: bool = True,
+) -> RetrievalQA:
+    template = """You are a Product information chatbot
+    {context}
+
+    "chat_history": {chat_history}
+
+    Question: {question}
+    Answer:"""
+    prompt = PromptTemplate(
+        template=template, input_variables=["context", "question", "chat_history"]
+    )
+
+    qa = RetrievalQA.from_chain_type(
+        llm=ChatOpenAI(
+            temperature=0.0, max_tokens=max_tokens, model_name=gpt_model, verbose=True
+        ),
+        chain_type="stuff",
+        retriever=db.as_retriever(**db_params),
+        chain_type_kwargs={"prompt": prompt, "verbose": True, "memory": memory},
+    )
+    return qa
+
+
+def create_qa_old(
+    db: VectorStore,
+    memory: BaseChatMemory,
+    db_params: dict = {"search_type": "similarity", "search_kwargs": {"k": 3}},
+    return_generated_question: bool = True,
+    return_source_documents: bool = True,
 ) -> ConversationalRetrievalChain:
     qa = ConversationalRetrievalChain.from_llm(
         llm=ChatOpenAI(temperature=0.0, max_tokens=max_tokens, model_name=gpt_model),
         chain_type="stuff",
         memory=memory,
         retriever=db.as_retriever(**db_params),
-        return_generated_question=True,
-        return_source_documents=True,
+        return_generated_question=return_generated_question,
+        return_source_documents=return_source_documents,
+        max_tokens_limit=max_tokens,
+        verbose=True,
     )
 
     no_op_chain = NoOpLLMChain()
@@ -416,6 +529,50 @@ def qa_complete(
         logger.info(f"Completion Tokens: {cb.completion_tokens}")
         logger.info(f"Total Cost (USD): ${cb.total_cost}")
 
+    return response, source_documents_metadatas
+
+
+def agents_complete(
+    executor: AgentExecutor,
+    query: str,
+    database_language: str = "english",
+    logger: logging.Logger = None,
+    client_id: str = None,
+    product_id: str = None,
+    chat_session_id: str = None,
+):
+    if logger is None:
+        logger = logging.getLogger(__name__)
+    with get_openai_callback() as cb:
+        try:
+            response = executor.run(query)
+        except Exception as e:
+            print(traceback.format_exc())
+            response = str(e)
+            if response.startswith("Could not parse LLM output:"):
+                response = response.removeprefix(
+                    "Could not parse LLM output:"
+                ).removesuffix("`")
+            executor.memory.chat_memory.add_user_message(query)
+            executor.memory.chat_memory.add_ai_message(response)
+        source_documents_metadatas = []
+        query_language = ""
+        save_chat_memory(
+            chat_message_history=ChatMessageHistory(messages=executor.memory.buffer),
+            client_id=client_id,
+            product_id=product_id,
+            chat_session_id=chat_session_id,
+        )
+        logger.info("query: {}, query_language: {}".format(query, query_language))
+        # logger.info("translated_query: {}".format(translated_query))
+        logger.info("source_documents_metadatas: {}".format(source_documents_metadatas))
+        # logger.info("answer: {}".format(result["answer"]))
+        logger.info("translated_answer: {}".format(response))
+
+        logger.info(f"Total Tokens: {cb.total_tokens}")
+        logger.info(f"Prompt Tokens: {cb.prompt_tokens}")
+        logger.info(f"Completion Tokens: {cb.completion_tokens}")
+        logger.info(f"Total Cost (USD): ${cb.total_cost}")
     return response, source_documents_metadatas
 
 

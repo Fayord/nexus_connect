@@ -4,12 +4,12 @@ import requests
 base_url = "http://localhost:9300"
 
 # Replace these with the actual product ID and client ID you want to use
-product_id = "product_a"
-# product_id = "product_a_small"
+# product_id = "product_a"
+product_id = "washing_machine_haier"
 client_id = "customer_1"
 chat_session_id = "session_1"
 # The message you want to send
-message = "what is the dimension of EWF9024P5WB model?"
+message = "what is the dimension of product?"
 # message = "ขนาดของรุ่น EWF9024P5WB ?"
 # message = "what is the maximum capacity of this EWF9024P5WB?"
 # message = "what is the maximum capacity of this EWF8024P5WB for daily39?"
