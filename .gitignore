@@ -4,9 +4,10 @@ __pycache__/
 *$py.class
 
 .DS_Store
-
+# add
 .env
 .credential
+notebook/
 *.pdf
 # C extensions
 *.so
