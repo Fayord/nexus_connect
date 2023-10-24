@@ -10,26 +10,22 @@ product_id = "aum_wiki"
 client_id = "customer_1"
 chat_session_id = "session_1"
 # The message you want to send
-message = "อั้มเกิดวันที่เท่าไหร่"
-# message = "ขนาดของรุ่น EWF9024P5WB ?"
-# message = "what is the maximum capacity of this EWF9024P5WB?"
-# message = "what is the maximum capacity of this EWF8024P5WB for daily39?"
 
-# Data to send in the POST request
-data = {"message": message}
 
 headers = {
     "X-Client-ID": f"{client_id}",
     "X-Product-ID": f"{product_id}",
     "X-Chat-Session-ID": f"{chat_session_id}",
 }
-#
-response = requests.get(base_url)
-print(response.json())
+
+# message = "this product is washing machine, brand is haier, model is 1234, price is 1000, it is good"
+website = "https://th.wikipedia.org/wiki/%E0%B8%9E%E0%B8%B1%E0%B8%8A%E0%B8%A3%E0%B8%B2%E0%B8%A0%E0%B8%B2_%E0%B9%84%E0%B8%8A%E0%B8%A2%E0%B9%80%E0%B8%8A%E0%B8%B7%E0%B9%89%E0%B8%AD"
+data = {"website": website, "knowledge_name": "aum_wiki_1"}
+
 # Make the POST request
 response = requests.post(
     # f"{base_url}/chat",
-    f"{base_url}/api/v1/chat",
+    f"{base_url}/api/v1/add_data_website",
     json=data,
     headers=headers,
 )
@@ -40,4 +36,6 @@ if response.status_code == 200:
     print("Response:", data)
 else:
     print("Request failed with status code:", response.status_code)
+    print(response.text)
+
 print(f"time used: {response.elapsed.total_seconds()}")

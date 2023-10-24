@@ -1,22 +1,14 @@
 import requests
 
 # Replace with your actual FastAPI server URL
-base_url = "http://localhost:9300"
-# base_url = "http://localhost:9500"
+# base_url = "http://localhost:9300"
+base_url = "http://localhost:9500"
 
 # Replace these with the actual product ID and client ID you want to use
-# product_id = "product_a"
-product_id = "aum_wiki"
+product_id = "washing_machine_haier"
 client_id = "customer_1"
 chat_session_id = "session_1"
-# The message you want to send
-message = "อั้มเกิดวันที่เท่าไหร่"
-# message = "ขนาดของรุ่น EWF9024P5WB ?"
-# message = "what is the maximum capacity of this EWF9024P5WB?"
-# message = "what is the maximum capacity of this EWF8024P5WB for daily39?"
 
-# Data to send in the POST request
-data = {"message": message}
 
 headers = {
     "X-Client-ID": f"{client_id}",
@@ -24,13 +16,10 @@ headers = {
     "X-Chat-Session-ID": f"{chat_session_id}",
 }
 #
-response = requests.get(base_url)
-print(response.json())
 # Make the POST request
-response = requests.post(
+response = requests.get(
     # f"{base_url}/chat",
-    f"{base_url}/api/v1/chat",
-    json=data,
+    f"{base_url}/api/v1/get_initial_message",
     headers=headers,
 )
 

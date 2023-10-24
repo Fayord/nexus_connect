@@ -18,11 +18,12 @@ class Error(BaseModel):
 
 
 class SuccessResponse(BaseModel):
-    status: str = Field(..., description="Response status", example="success")
+    status: Literal["success", "fail"] = Field(
+        ..., description="Response status", example="success"
+    )
     request_id: str = Field(..., description="Response id", example="123wereqs2")
     error: Optional[List[Error]]
     # confidence: Optional[float]
-    data: str
 
 
 class SourceData(BaseModel):
